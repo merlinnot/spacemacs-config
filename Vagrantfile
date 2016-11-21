@@ -32,6 +32,7 @@ Vagrant.configure("2") do |config|
 
   # Forwarding ports with auto-correction
   config.vm.network "forwarded_port", guest: 3000, host: 3000, auto_correct: true
+  config.vm.network "forwarded_port", guest: 8000, host: 8000, auto_correct: true
   config.vm.network "forwarded_port", guest: 8080, host: 8080, auto_correct: true
   config.vm.network "forwarded_port", guest: 8081, host: 8081, auto_correct: true
   config.vm.network "forwarded_port", guest: 8082, host: 8082, auto_correct: true

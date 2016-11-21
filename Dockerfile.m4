@@ -19,6 +19,8 @@ include(tool/spacemacs.docker)
 include(tool/thefuck.docker)
 include(tool/gcloud.docker)
 include(tool/bash.docker)
+include(tool/xpra.docker)
+include(tool/atom.docker)
 
 # Shrinking image
 include(shrink.docker)

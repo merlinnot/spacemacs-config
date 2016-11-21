@@ -1,0 +1,31 @@
+# -*-dockerfile-*-
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install xpra
+RUN curl http://winswitch.org/gpg.asc | apt-key add - && \
+    echo "deb http://winswitch.org/ xenial main" > \
+      /etc/apt/sources.list.d/winswitch.list && \
+    apt-get install software-properties-common && \
+    add-apt-repository universe && \
+    apt-get update && \
+    apt-get install -y -qq xpra
+ENV DISPLAY=:10
+RUN mkdir /etc/service/xpra && \
+    printf \
+      "#!/bin/sh\n \
+      set -e\n \
+      exec xpra start :10  \
+        --bind-tcp=0.0.0.0:8000 \
+        --daemon=no \
+        --html=on \
+        --mdns=no \
+        --printing=no \
+        --pulseaudio=no \
+        --shadow-fullscreen=yes \
+        --title=\"Atom at dev\" \
+        --webcam=no \
+        --window-close=ignore \
+        &> /tmp/xpra.log" \
+      >> /etc/service/xpra/run && \
+    chmod 755 /etc/service/xpra/run
