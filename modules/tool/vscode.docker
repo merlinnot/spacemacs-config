@@ -5,6 +5,7 @@ RUN apt-get install -y -qq \
       libnss3 \
       libasound2 \
       libxtst6 \
+      libxss1 \
       libnotify4
 ADD https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable \
     /tmp/vscode-amd64.deb
