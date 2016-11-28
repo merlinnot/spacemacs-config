@@ -20,7 +20,6 @@ include(tool/thefuck.docker)
 include(tool/gcloud.docker)
 include(tool/bash.docker)
 include(tool/xpra.docker)
-include(tool/atom.docker)
 include(tool/vscode.docker)
 
 # Shrinking image

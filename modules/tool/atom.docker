@@ -1,8 +1,0 @@
-# -*-dockerfile-*-
-
-RUN add-apt-repository ppa:webupd8team/atom && \
-    apt-get update && \
-    apt-get install -y -qq --no-install-recommends \
-      atom \
-      libxss1
-# RUN printf "atom\n$(cat /etc/rc.local)" > /etc/rc.local
