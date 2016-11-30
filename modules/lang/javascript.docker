@@ -1,7 +1,8 @@
 # -*-dockerfile-*-
 
 # Install Node
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash && \
+RUN NODE_VERSION="7" && \ 
+    curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash && \
     apt-get install -y --no-install-recommends nodejs
 
 # Install essential packages
@@ -12,9 +13,5 @@ RUN npm install -g \
       polymer-cli
 
 # Install Yarn
-RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | \
-    apt-key add - && \
-    echo "deb http://dl.yarnpkg.com/debian/ stable main" | \
-    tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update && \
-    apt-get install yarn
+RUN YARN_VERSION="0.16.1" && \
+    npm install --global yarn@${YARN_VERSION}
