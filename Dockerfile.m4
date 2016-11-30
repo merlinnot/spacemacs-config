@@ -19,7 +19,7 @@ include(tool/spacemacs.docker)
 include(tool/thefuck.docker)
 include(tool/gcloud.docker)
 include(tool/bash.docker)
-include(tool/vscode.docker)
+include(tool/vscode/vscode.docker)
 
 # Shrinking image
 include(shrink.docker)

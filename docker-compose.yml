@@ -3,7 +3,7 @@ services:
   dev:
     container_name: dev
     environment:
-      - DISPLAY=unix${DISPLAY}
+      - DISPLAY=${DISPLAY}
     image: merlinnot/dev
     ports:
       - "3000:3000"
